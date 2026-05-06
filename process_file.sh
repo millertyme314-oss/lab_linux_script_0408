@@ -1,5 +1,4 @@
 #!/bin/bash 
-
 ## What is the technical term for the code on Line 1 : shebang line
 ## What does it accomplish: provides explicit instruction for CLI on language to use to interpret
 
@@ -13,6 +12,11 @@ if [ ! -f "$INPUT_FILE" ]; then
 echo "Error: Input file not found...Tighten up!"
 exit 1
 fi
+
+##Explain lines 11 - 13. What are they and where are they used later in the script?
+
+## If the input file is not found/flagged, then script/process will terminate 
+## and return a non-zero exit status, signaling an error
 
 echo "Processing file: $INPUT_FILE"
 while IFS= read -r line

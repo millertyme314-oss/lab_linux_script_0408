@@ -5,7 +5,7 @@
 INPUT_FILE="input/test.txt"
 OUTPUT_DIR="output"
 OUTPUT_FILE="output/processed.txt"
-ARCHIVE="archive" 
+ARCHIVE="archive/safe.txt" 
 
 mkdir -p "$OUTPUT_DIR"
 mkdir -p "$ARCHIVE"

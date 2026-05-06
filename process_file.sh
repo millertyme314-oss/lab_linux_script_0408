@@ -26,9 +26,9 @@ do
     
 processed_line="PROCESSED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 
-    
+# Archive the process line    
 echo "$processed_line" >> "$OUTPUT_FILE"
-cp "$processed_line" >> "$ARCHIVE"
+echo "$processed_line" >> "$ARCHIVE"
 
 done < "$INPUT_FILE"
 echo "Done!"

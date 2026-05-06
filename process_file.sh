@@ -25,10 +25,11 @@ while IFS= read -r line
 do
     
 processed_line="PROCESSED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
+archived_stuff="ARCHIVED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 
-# Archive the process line    
+# Archive the processed line    
 echo "$processed_line" >> "$OUTPUT_FILE"
-echo "$processed_line" >> "$ARCHIVE"
+echo "$archived_stuff" >> "$ARCHIVE"
 
 done < "$INPUT_FILE"
 echo "Done!"

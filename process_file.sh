@@ -5,8 +5,10 @@
 INPUT_FILE="input/test.txt"
 OUTPUT_DIR="output"
 OUTPUT_FILE="output/processed.txt"
+ARCHIVE="archive" 
 
 mkdir -p "$OUTPUT_DIR"
+mkdir -p "$ARCHIVE"
 
 if [ ! -f "$INPUT_FILE" ]; then
 echo "Error: Input file not found...Tighten up!"
@@ -26,6 +28,7 @@ processed_line="PROCESSED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 
     
 echo "$processed_line" >> "$OUTPUT_FILE"
+cp "$processed_line" >> "$ARCHIVE"
 
 done < "$INPUT_FILE"
 echo "Done!"

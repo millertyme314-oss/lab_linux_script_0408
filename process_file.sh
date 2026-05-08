@@ -5,10 +5,11 @@
 INPUT_FILE="input/test.txt"
 OUTPUT_DIR="output"
 OUTPUT_FILE="output/processed.txt"
-ARCHIVE="archive/safe.txt" 
+ARCHIVE_DIR="archive"
+ARCHIVE_FILE="archive/safe.txt" 
 
 mkdir -p "$OUTPUT_DIR"
-mkdir -p "$ARCHIVE"
+mkdir -p "$ARCHIVE_DIR"
 
 if [ ! -f "$INPUT_FILE" ]; then
 echo "Error: Input file not found...Tighten up!"
@@ -25,11 +26,11 @@ while IFS= read -r line
 do
     
 processed_line="PROCESSED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
-archived_stuff="ARCHIVED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
+archived_line="ARCHIVED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 
 #Archive the processed line    
 echo "$processed_line" >> "$OUTPUT_FILE"
-echo "$archived_line" >> "$ARCHIVE"
+echo "$archived_line" >> "$ARCHIVE_FILE"
 
 done < "$INPUT_FILE"
 echo "Done!"

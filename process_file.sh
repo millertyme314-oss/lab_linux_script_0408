@@ -17,8 +17,8 @@ fi
 
 ##Explain lines 11 - 13. What are they and where are they used later in the script?
 
-## If the input file is not found/flagged, then script/process will terminate 
-## and return a non-zero exit status, signaling an error
+##If the input file is not found/flagged, then script/process will terminate 
+##and return a non-zero exit status, signaling an error
 
 echo "Processing file: $INPUT_FILE"
 while IFS= read -r line
@@ -27,11 +27,10 @@ do
 processed_line="PROCESSED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 archived_stuff="ARCHIVED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 
-# Archive the processed line    
+#Archive the processed line    
 echo "$processed_line" >> "$OUTPUT_FILE"
 echo $archived_line" >> "$ARCHIVE"
 
 done < "$INPUT_FILE"
 echo "Done!"
 echo "Processed lines have been saved to: $OUTPUT_FILE"
-

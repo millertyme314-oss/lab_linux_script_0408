@@ -8,6 +8,7 @@ OUTPUT_FILE="output/processed.txt"
 ARCHIVE_DIR="archive"
 ARCHIVE_FILE="archive/safe.txt" 
 
+#Create 2 directories: output and archive
 mkdir -p "$OUTPUT_DIR"
 mkdir -p "$ARCHIVE_DIR"
 
@@ -24,7 +25,7 @@ fi
 echo "Processing file: $INPUT_FILE"
 while IFS= read -r line
 do
-    
+#Processed output is also placed into the archive    
 processed_line="PROCESSED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 archived_line="ARCHIVED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 

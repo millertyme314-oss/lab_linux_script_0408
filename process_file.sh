@@ -30,7 +30,7 @@ archived_line="ARCHIVED: $(echo "$line" | tr '[:lower:]' '[:upper:]')"
 
 #Archive the processed line    
 echo "$processed_line" >> "$OUTPUT_FILE"
-echo "$archived_line" +="_arc" >> "$ARCHIVE_FILE"
+echo "$archived_line"+="_arc" >> "$ARCHIVE_FILE"
 
 done < "$INPUT_FILE"
 echo "Done!"
